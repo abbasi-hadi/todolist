@@ -1,107 +1,270 @@
-:root {
-  --max-width: 1100px;
-  --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
-    'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
-
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-
-  --primary-glow: conic-gradient(
-    from 180deg at 50% 50%,
-    #16abff33 0deg,
-    #0885ff33 55deg,
-    #54d6ff33 120deg,
-    #0071ff33 160deg,
-    transparent 360deg
-  );
-  --secondary-glow: radial-gradient(
-    rgba(255, 255, 255, 1),
-    rgba(255, 255, 255, 0)
-  );
-
-  --tile-start-rgb: 239, 245, 249;
-  --tile-end-rgb: 228, 232, 233;
-  --tile-border: conic-gradient(
-    #00000080,
-    #00000040,
-    #00000030,
-    #00000020,
-    #00000010,
-    #00000010,
-    #00000080
-  );
-
-  --callout-rgb: 238, 240, 241;
-  --callout-border-rgb: 172, 175, 176;
-  --card-rgb: 180, 185, 188;
-  --card-border-rgb: 131, 134, 135;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: dana;
+  font-style: normal;
+  font-weight: 10;
+  src: url('../assets/fonts/eot/dana-thin.eot');
+  src: url('../assets/fonts/eot/dana-thin.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-8 */ url('../assets/fonts/woff2/dana-thin.woff2') format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/ url('../assets/fonts/woff/dana-thin.woff')
+      format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: dana;
+  font-style: normal;
+  font-weight: 200;
+  src: url('../assets/fonts/eot/dana-extralight.eot');
+  src: url('../assets/fonts/eot/dana-extralight.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-8 */ url('../assets/fonts/woff2/dana-extralight.woff2')
+      format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/
+      url('../assets/fonts/woff/dana-extralight.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: dana;
+  font-style: normal;
+  font-weight: 300;
+  src: url('../assets/fonts/eot/dana-light.eot');
+  src: url('../assets/fonts/eot/dana-light.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-8 */ url('../assets/fonts/woff2/dana-light.woff2') format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/ url('../assets/fonts/woff/dana-light.woff')
+      format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: dana;
+  font-style: normal;
+  font-weight: 500;
+  src: url('../assets/fonts/eot/dana-medium.eot');
+  src: url('../assets/fonts/eot/dana-medium.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-8 */ url('../assets/fonts/woff2/dana-medium.woff2') format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/ url('../assets/fonts/woff/dana-medium.woff')
+      format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: dana;
+  font-style: normal;
+  font-weight: 600;
+  src: url('../assets/fonts/eot/dana-demibold.eot');
+  src: url('../assets/fonts/eot/dana-demibold.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-8 */ url('../assets/fonts/woff2/dana-demibold.woff2') format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/
+      url('../assets/fonts/woff/dana-demibold.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: dana;
+  font-style: normal;
+  font-weight: 750;
+  src: url('../assets/fonts/eot/dana-ultrabold.eot');
+  src: url('../assets/fonts/eot/dana-ultrabold.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-8 */ url('../assets/fonts/woff2/dana-ultrabold.woff2')
+      format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/
+      url('../assets/fonts/woff/dana-ultrabold.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: dana;
+  font-style: normal;
+  font-weight: 800;
+  src: url('../assets/fonts/eot/dana-extrabold.eot');
+  src: url('../assets/fonts/eot/dana-extrabold.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-8 */ url('../assets/fonts/woff2/dana-extrabold.woff2')
+      format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/
+      url('../assets/fonts/woff/dana-extrabold.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: dana;
+  font-style: normal;
+  font-weight: 900;
+  src: url('../assets/fonts/eot/dana-black.eot');
+  src: url('../assets/fonts/eot/dana-black.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-8 */ url('../assets/fonts/woff2/dana-black.woff2') format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/ url('../assets/fonts/woff/dana-black.woff')
+      format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: dana;
+  font-style: normal;
+  font-weight: bold;
+  src: url('../assets/fonts/eot/dana-bold.eot');
+  src: url('../assets/fonts/eot/dana-bold.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-8 */ url('../assets/fonts/woff2/dana-bold.woff2') format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/ url('../assets/fonts/woff/dana-bold.woff')
+      format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: dana;
+  font-style: normal;
+  font-weight: normal;
+  src: url('../assets/fonts/eot/dana-regular.eot');
+  src: url('../assets/fonts/eot/dana-regular.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-8 */ url('../assets/fonts/woff2/dana-regular.woff2') format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/ url('../assets/fonts/woff/dana-regular.woff')
+      format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+/**
+Iranic fonts	
+**/
 
-    --primary-glow: radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0));
-    --secondary-glow: linear-gradient(
-      to bottom right,
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0),
-      rgba(1, 65, 255, 0.3)
-    );
-
-    --tile-start-rgb: 2, 13, 46;
-    --tile-end-rgb: 2, 5, 19;
-    --tile-border: conic-gradient(
-      #ffffff80,
-      #ffffff40,
-      #ffffff30,
-      #ffffff20,
-      #ffffff10,
-      #ffffff10,
-      #ffffff80
-    );
-
-    --callout-rgb: 20, 20, 20;
-    --callout-border-rgb: 108, 108, 108;
-    --card-rgb: 100, 100, 100;
-    --card-border-rgb: 200, 200, 200;
-  }
+@font-face {
+  font-family: dana;
+  font-style: italic;
+  font-weight: 10;
+  src: url('../assets/fonts/eot/dana-thinitalic.eot');
+  src: url('../assets/fonts/eot/dana-thinitalic.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-8 */ url('../assets/fonts/woff2/dana-thinitalic.woff2')
+      format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/
+      url('../assets/fonts/woff/dana-thinitalic.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
 }
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+@font-face {
+  font-family: dana;
+  font-style: italic;
+  font-weight: 200;
+  src: url('../assets/fonts/eot/dana-extralightitalic.eot');
+  src: url('../assets/fonts/eot/dana-extralightitalic.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-8 */ url('../assets/fonts/woff2/dana-extralightitalic.woff2')
+      format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/
+      url('../assets/fonts/woff/dana-extralightitalic.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
 }
-
-html,
+@font-face {
+  font-family: dana;
+  font-style: italic;
+  font-weight: 300;
+  src: url('../assets/fonts/eot/dana-lightitalic.eot');
+  src: url('../assets/fonts/eot/dana-lightitalic.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-8 */ url('../assets/fonts/woff2/dana-lightitalic.woff2')
+      format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/
+      url('../assets/fonts/woff/dana-lightitalic.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: dana;
+  font-style: italic;
+  font-weight: 500;
+  src: url('../assets/fonts/eot/dana-mediumitalic.eot');
+  src: url('../assets/fonts/eot/dana-mediumitalic.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-8 */ url('../assets/fonts/woff2/dana-mediumitalic.woff2')
+      format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/
+      url('../assets/fonts/woff/dana-mediumitalic.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: dana;
+  font-style: italic;
+  font-weight: 600;
+  src: url('../assets/fonts/eot/dana-demibolditalic.eot');
+  src: url('../assets/fonts/eot/dana-demibolditalic.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-8 */ url('../assets/fonts/woff2/dana-demibolditalic.woff2')
+      format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/
+      url('../assets/fonts/woff/dana-demibolditalic.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: dana;
+  font-style: italic;
+  font-weight: 750;
+  src: url('../assets/fonts/eot/dana-ultrabolditalic.eot');
+  src: url('../assets/fonts/eot/dana-ultrabolditalic.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-8 */ url('../assets/fonts/woff2/dana-ultrabolditalic.woff2')
+      format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/
+      url('../assets/fonts/woff/dana-ultrabolditalic.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: dana;
+  font-style: italic;
+  font-weight: 800;
+  src: url('../assets/fonts/eot/dana-extrabolditalic.eot');
+  src: url('../assets/fonts/eot/dana-extrabolditalic.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-8 */ url('../assets/fonts/woff2/dana-extrabolditalic.woff2')
+      format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/
+      url('../assets/fonts/woff/dana-extrabolditalic.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: dana;
+  font-style: italic;
+  font-weight: 900;
+  src: url('../assets/fonts/eot/dana-blackitalic.eot');
+  src: url('../assets/fonts/eot/dana-blackitalic.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-8 */ url('../assets/fonts/woff2/dana-blackitalic.woff2')
+      format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/
+      url('../assets/fonts/woff/dana-blackitalic.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: dana;
+  font-style: italic;
+  font-weight: bold;
+  src: url('../assets/fonts/eot/dana-bolditalic.eot');
+  src: url('../assets/fonts/eot/dana-bolditalic.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-8 */ url('../assets/fonts/woff2/dana-bolditalic.woff2')
+      format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/
+      url('../assets/fonts/woff/dana-bolditalic.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
+@font-face {
+  font-family: dana;
+  font-style: italic;
+  font-weight: normal;
+  src: url('../assets/fonts/eot/dana-regularitalic.eot');
+  src: url('../assets/fonts/eot/dana-regularitalic.eot?#iefix')
+      format('embedded-opentype'),
+    /* IE6-8 */ url('../assets/fonts/woff2/dana-regularitalic.woff2')
+      format('woff2'),
+    /* FF39+,Chrome36+, Opera24+*/
+      url('../assets/fonts/woff/dana-regularitalic.woff') format('woff'); /* FF3.6+, IE9, Chrome6+, Saf5.1+*/
+}
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
+  font-family: dana !important;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+textarea,
+.Toastify__toast-body {
+  font-family: dana !important;
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.item-enter {
+  opacity: 0;
 }
-
-a {
-  color: inherit;
-  text-decoration: none;
+.item-enter-active {
+  opacity: 1;
+  transition: opacity 1000ms ease-in;
 }
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.item-exit {
+  opacity: 1;
+}
+.item-exit-active {
+  opacity: 0;
+  transition: opacity 1000ms ease-in;
 }
